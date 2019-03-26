@@ -29,19 +29,19 @@ char *reverse_string(char *rv, char *s)
 {
     int sLen = string_length(s);
 
-    printf("rv start address: %c\n", &rv);
+    printf("rv start address: %p\n", rv);
 
-    for (int i = sLen; i >= 0; i--)
+    for (int i = sLen - 1; i >= 0; i--)
     {
         printf("*s before: %c\n", *s);
         rv[i] = *s;
         printf("rv[i]: %c\n", rv[i]);
-        *s++;
-        printf("*s after: %c\n", *s);
+        s++;
+        printf("*s after: %c\n\n", *s);
     }
-    rv[sLen + 1] = 0;
+    rv[sLen] = 0;
 
-    printf("rv end address: %i\n", rv);
+    printf("rv end address: %s\n", rv);
 
     return rv;
 }
